@@ -1,2 +1,2 @@
-# sales-api
-API de Controle de Vendas
+# Sales API
+API de Controle de Vendas em Java
