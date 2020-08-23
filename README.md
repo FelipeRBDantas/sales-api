@@ -40,5 +40,3 @@ API de Controle de Vendas em Java
 - [] Vendedor
 - [] Cliente
 - [] Venda
-
-Em construção...
