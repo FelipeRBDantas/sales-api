@@ -33,10 +33,10 @@ API de Controle de Vendas em Java
 
 ### Features  
 
-- [X] Categoria
-- [] Fornecedor
-- [] Produto
-- [] Pagamento
-- [] Vendedor
-- [] Cliente
-- [] Venda
+- [X] Category
+- [ ] Provider
+- [ ] Product
+- [ ] Payment
+- [ ] Salesman
+- [ ] Client
+- [ ] Sale
