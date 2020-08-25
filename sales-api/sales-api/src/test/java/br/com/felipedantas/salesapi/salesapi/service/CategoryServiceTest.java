@@ -1,5 +1,6 @@
 package br.com.felipedantas.salesapi.salesapi.service;
 
+import br.com.felipedantas.salesapi.salesapi.exception.BusinessException;
 import br.com.felipedantas.salesapi.salesapi.model.entity.Category;
 import br.com.felipedantas.salesapi.salesapi.model.repository.CategoryRepository;
 import br.com.felipedantas.salesapi.salesapi.service.impl.CategoryServiceImpl;
@@ -30,6 +31,7 @@ public class CategoryServiceTest {
     public void mustSaveCategoryTest(){
         Category categorySave = Category.builder().name("Informática").description("Informática").build();
         Category categorySaved = Category.builder().id( 1l ).name("Informática").description("Informática").build();
+        Mockito.when( categoryRepository.existsByName( Mockito.anyString() ) ).thenReturn( false );
         Mockito.when( categoryRepository.save( categorySave ) ).thenReturn( categorySaved );
         Category saved = categoryService.save( categorySave );
         Assertions.assertThat( saved.getId() ).isNotNull();
@@ -38,15 +40,15 @@ public class CategoryServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar erro de validação quando não houver dados suficiente para criação da categoria.")
-    public void saveInvalidCategoryTest(){
-
-    }
-
-    @Test
     @DisplayName("Deve lançar erro ao tentar cadastrar uma categoria já existente.")
     public void saveDuplicatedCategoryTest(){
-
+        Category categorySave = Category.builder().name("Informática").description("Informática").build();
+        Mockito.when( categoryRepository.existsByName( Mockito.anyString() ) ).thenReturn( true );
+        Throwable throwable = Assertions.catchThrowable( () -> categoryService.save( categorySave ) );
+        Assertions.assertThat( throwable )
+                .isInstanceOf( BusinessException.class )
+                .hasMessage("Categoria já cadastrada.");
+        Mockito.verify( categoryRepository, Mockito.never() ).save( categorySave );
     }
 
     @Test
@@ -82,6 +84,18 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Deve retornar resource not found quando a categoria filtrada por id não existir.")
     public void notFoundCategoryTest(){
+
+    }
+
+    @Test
+    @DisplayName("Deve retornar verdadeiro quando existir uma categoria na base com o nome informado.")
+    public void returnTrueWhenNameExistsTest(){
+
+    }
+
+    @Test
+    @DisplayName("Deve retornar falso quando não existir uma categoria na base com o nome informado.")
+    public void returnFalseWhenNameExistsTest(){
 
     }
 
