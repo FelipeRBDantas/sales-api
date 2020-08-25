@@ -1,7 +1,7 @@
 # Sales API
 API de Controle de Vendas em Java
 
-### Tools
+## Tools
 
 :coffee: Java 8
 
@@ -31,12 +31,61 @@ API de Controle de Vendas em Java
 
 :hammer_and_wrench: Codecov
 
-### Features  
+## Features
 
-- [X] Category
-- [ ] Provider
-- [ ] Product
-- [ ] Payment
-- [ ] Salesman
-- [ ] Client
-- [ ] Sale
+### Category
+
+- [X] Save
+- [X] Update
+- [ ] Delete
+- [ ] Find
+- [ ] FindById
+- [X] ExistsByName
+
+### Provider
+
+- [ ] Save
+- [ ] Update
+- [ ] Delete
+- [ ] Find
+- [ ] FindById
+
+### Payment
+
+- [ ] Save
+- [ ] Update
+- [ ] Delete
+- [ ] Find
+- [ ] FindById
+
+### Salesman
+
+- [ ] Save
+- [ ] Update
+- [ ] Delete
+- [ ] Find
+- [ ] FindById
+
+### Client
+
+- [ ] Save
+- [ ] Update
+- [ ] Delete
+- [ ] Find
+- [ ] FindById
+
+### Provider
+
+- [ ] Save
+- [ ] Update
+- [ ] Delete
+- [ ] Find
+- [ ] FindById
+
+### Sale
+
+- [ ] Save
+- [ ] Update
+- [ ] Delete
+- [ ] Find
+- [ ] FindById
