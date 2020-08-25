@@ -93,9 +93,9 @@ public class CategoryControllerTest {
     public void mustUpdateCategoryTest() throws Exception {
         CategoryDTO categoryDTO = CategoryDTO.builder().name("Celular e Telefone").description("Smartphone").build() ;
         String json = new ObjectMapper().writeValueAsString( categoryDTO );
-        Category categoryUpdating = Category.builder().id(1l).name("Informática").description("Informática").build();
+        Category categoryUpdating = Category.builder().id( 1l ).name("Informática").description("Informática").build();
         BDDMockito.given( categoryService.getById( 1l ) ).willReturn( Optional.of( categoryUpdating ) );
-        Category categoryUpdated = Category.builder().id(1l).name("Celular e Telefone").description("Smartphone").build();
+        Category categoryUpdated = Category.builder().id( 1l ).name("Celular e Telefone").description("Smartphone").build();
         BDDMockito.given( categoryService.update( categoryUpdating ) ).willReturn( categoryUpdated );
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .put( CategoryAPI.concat( "/" + 1 ) )

@@ -29,14 +29,14 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Deve salvar uma categoria com sucesso.")
     public void mustSaveCategoryTest(){
-        Category categorySave = Category.builder().name("Informática").description("Informática").build();
+        Category categorySaving = Category.builder().name("Informática").description("Informática").build();
         Category categorySaved = Category.builder().id( 1l ).name("Informática").description("Informática").build();
         Mockito.when( categoryRepository.existsByName( Mockito.anyString() ) ).thenReturn( false );
-        Mockito.when( categoryRepository.save( categorySave ) ).thenReturn( categorySaved );
-        Category saved = categoryService.save( categorySave );
-        Assertions.assertThat( saved.getId() ).isNotNull();
-        Assertions.assertThat( saved.getName() ).isEqualTo("Informática");
-        Assertions.assertThat( saved.getDescription() ).isEqualTo("Informática");
+        Mockito.when( categoryRepository.save( categorySaving ) ).thenReturn( categorySaved );
+        Category categorySave = categoryService.save( categorySaving );
+        Assertions.assertThat( categorySave.getId() ).isNotNull();
+        Assertions.assertThat( categorySave.getName() ).isEqualTo("Informática");
+        Assertions.assertThat( categorySave.getDescription() ).isEqualTo("Informática");
     }
 
     @Test
@@ -54,13 +54,21 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Deve atualizar uma categoria com sucesso.")
     public void mustUpdateCategoryTest(){
-
+        Category categoryUpdating = Category.builder().id( 1l ).name("Informática").description("Informática").build();
+        Category categoryUpdated = Category.builder().id( 1l ).name("Informática").description("Informática").build();
+        Mockito.when( categoryRepository.save( categoryUpdating ) ).thenReturn( categoryUpdated );
+        Category categoryUpdate = categoryService.update( categoryUpdating );
+        Assertions.assertThat( categoryUpdate.getName() ).isEqualTo( categoryUpdated.getName() );
+        Assertions.assertThat( categoryUpdate.getDescription() ).isEqualTo( categoryUpdated.getDescription() );
     }
 
     @Test
     @DisplayName("Deve retornar resource not found ao tentar atualizar uma categoria inexistente.")
     public void updateInexistentCategoryTest(){
-
+        Category category = new Category();
+        org.junit.jupiter.api.Assertions
+                .assertThrows( IllegalArgumentException.class, () -> categoryService.update( category ) );
+        Mockito.verify( categoryRepository, Mockito.never() ).save( category );
     }
 
     @Test

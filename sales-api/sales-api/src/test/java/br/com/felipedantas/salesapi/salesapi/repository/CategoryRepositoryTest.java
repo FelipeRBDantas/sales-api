@@ -28,12 +28,6 @@ public class CategoryRepositoryTest {
     }
 
     @Test
-    @DisplayName("Deve atualizar uma categoria com sucesso.")
-    public void mustUpdateCategoryTest(){
-
-    }
-
-    @Test
     @DisplayName("Deve remover uma categoria com sucesso.")
     public void mustDeleteCategoryTest(){
 
