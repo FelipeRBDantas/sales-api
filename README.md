@@ -5,6 +5,8 @@ API de Controle de Vendas em Java
 
 :coffee: Java 8
 
+:hammer_and_wrench: Intellij IDEA
+
 :hammer_and_wrench: TDD
 
 :hammer_and_wrench: BDD
