@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 
@@ -36,5 +37,23 @@ public class CategoryController {
         Category entity = modelMapper.map( categoryDTO, Category.class );
         entity = categoryService.save( entity );
         return modelMapper.map( entity, CategoryDTO.class );
+    }
+
+    @PutMapping("{id}")
+    @ApiOperation("UPDATES A CATEGORY")
+    @ApiResponses({
+            @ApiResponse( code = 200, message = "Category successfully updated" )
+    })
+    public CategoryDTO update( @PathVariable Long id, @RequestBody @Valid CategoryDTO categoryDTO ){
+        log.info( " updating a category. " );
+        return categoryService
+                .getById( id )
+                .map( category -> {
+                    category.setName( categoryDTO.getName() );
+                    category.setDescription( categoryDTO.getDescription() );
+                    category = categoryService.update( category );
+                    return modelMapper.map( category, CategoryDTO.class );
+                })
+                .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
     }
 }

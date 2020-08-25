@@ -21,6 +21,10 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.util.Optional;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
 @WebMvcTest( controllers = CategoryController.class )
 @ActiveProfiles("test")
 public class CategoryControllerTest {
@@ -87,7 +91,22 @@ public class CategoryControllerTest {
     @Test
     @DisplayName("Deve atualizar uma categoria com sucesso.")
     public void mustUpdateCategoryTest() throws Exception {
-
+        CategoryDTO categoryDTO = CategoryDTO.builder().name("Celular e Telefone").description("Smartphone").build() ;
+        String json = new ObjectMapper().writeValueAsString( categoryDTO );
+        Category categoryUpdating = Category.builder().id(1l).name("Informática").description("Informática").build();
+        BDDMockito.given( categoryService.getById( 1l ) ).willReturn( Optional.of( categoryUpdating ) );
+        Category categoryUpdated = Category.builder().id(1l).name("Celular e Telefone").description("Smartphone").build();
+        BDDMockito.given( categoryService.update( categoryUpdating ) ).willReturn( categoryUpdated );
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .put( CategoryAPI.concat( "/" + 1 ) )
+                .accept( MediaType.APPLICATION_JSON )
+                .contentType( MediaType.APPLICATION_JSON )
+                .content( json );
+        mockMvc.perform( request )
+                .andExpect( MockMvcResultMatchers.status().isOk() )
+                .andExpect( jsonPath("id").value( 1l ) )
+                .andExpect( jsonPath("name").value( categoryDTO.getName() ) )
+                .andExpect( jsonPath("description").value( categoryDTO.getDescription() ) );
     }
 
     @Test
@@ -117,18 +136,6 @@ public class CategoryControllerTest {
     @Test
     @DisplayName("Deve retornar resource not found quando a categoria filtrada por id não existir.")
     public void notFoundCategoryTest() throws Exception {
-
-    }
-
-    @Test
-    @DisplayName("Deve retornar verdadeiro quando existir uma categoria na base com o nome informado.")
-    public void returnTrueWhenNameExistsTest(){
-
-    }
-
-    @Test
-    @DisplayName("Deve retornar falso quando não existir uma categoria na base com o nome informado.")
-    public void returnFalseWhenNameExistsTest(){
 
     }
 

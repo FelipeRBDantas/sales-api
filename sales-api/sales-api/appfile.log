@@ -370,3 +370,66 @@ but was not., mergedContextConfiguration = [MergedContextConfiguration@62e7f11d 
 2020-08-24 21:33:22.779  INFO 9096 --- [main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@4cc8eb05 testClass = CategoryRepositoryTest, testInstance = br.com.felipedantas.salesapi.salesapi.repository.CategoryRepositoryTest@1b3a9ef4, testMethod = mustFindByIdCategoryTest@CategoryRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@51f116b8 testClass = CategoryRepositoryTest, locations = '{}', classes = '{class br.com.felipedantas.salesapi.salesapi.SalesApiApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@19d481b key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4550bb58, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@49139829, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@409bf450, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@eb3f0c4e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@77888435, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]
 2020-08-24 21:33:22.811  INFO 9096 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-08-24 21:33:22.811  INFO 9096 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-24 21:58:15.692  INFO 11160 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Starting CategoryControllerTest on LAPTOP-DL9ICLI6 with PID 11160 (started by felip in C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api)
+2020-08-24 21:58:15.716  INFO 11160 --- [main] b.c.f.s.s.r.CategoryControllerTest       : The following profiles are active: test
+2020-08-24 21:58:21.640  INFO 11160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 21:58:22.514  INFO 11160 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-24 21:58:22.514  INFO 11160 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-24 21:58:22.558  INFO 11160 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 44 ms
+2020-08-24 21:58:22.666  INFO 11160 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Started CategoryControllerTest in 9.054 seconds (JVM running for 13.505)
+2020-08-24 21:58:24.278  INFO 11160 --- [main] b.c.f.s.s.a.resource.CategoryController  :  creating a category. 
+2020-08-24 21:58:24.514  INFO 11160 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:14:08.245  INFO 17108 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Starting CategoryControllerTest on LAPTOP-DL9ICLI6 with PID 17108 (started by felip in C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api)
+2020-08-24 22:14:08.260  INFO 17108 --- [main] b.c.f.s.s.r.CategoryControllerTest       : The following profiles are active: test
+2020-08-24 22:14:17.027  INFO 17108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:14:17.686  INFO 17108 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-24 22:14:17.687  INFO 17108 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-24 22:14:17.709  INFO 17108 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 22 ms
+2020-08-24 22:14:17.838  INFO 17108 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Started CategoryControllerTest in 12.899 seconds (JVM running for 15.962)
+2020-08-24 22:14:18.850  INFO 17108 --- [main] b.c.f.s.s.a.resource.CategoryController  :  creating a category. 
+2020-08-24 22:14:19.098  INFO 17108 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:14:45.095  INFO 13332 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Starting CategoryControllerTest on LAPTOP-DL9ICLI6 with PID 13332 (started by felip in C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api)
+2020-08-24 22:14:45.099  INFO 13332 --- [main] b.c.f.s.s.r.CategoryControllerTest       : The following profiles are active: test
+2020-08-24 22:14:48.034  INFO 13332 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:14:48.545  INFO 13332 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-24 22:14:48.546  INFO 13332 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-24 22:14:48.577  INFO 13332 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 31 ms
+2020-08-24 22:14:48.642  INFO 13332 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Started CategoryControllerTest in 4.607 seconds (JVM running for 7.056)
+2020-08-24 22:14:48.952  WARN 13332 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2020-08-24 22:14:49.054  INFO 13332 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:15:32.077  INFO 13424 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Starting CategoryControllerTest on LAPTOP-DL9ICLI6 with PID 13424 (started by felip in C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api)
+2020-08-24 22:15:32.080  INFO 13424 --- [main] b.c.f.s.s.r.CategoryControllerTest       : The following profiles are active: test
+2020-08-24 22:15:34.960  INFO 13424 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:15:35.426  INFO 13424 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-24 22:15:35.427  INFO 13424 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-24 22:15:35.454  INFO 13424 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 27 ms
+2020-08-24 22:15:35.510  INFO 13424 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Started CategoryControllerTest in 4.358 seconds (JVM running for 6.539)
+2020-08-24 22:15:35.793  WARN 13424 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2020-08-24 22:15:35.876  INFO 13424 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:17:02.772  INFO 18812 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Starting CategoryControllerTest on LAPTOP-DL9ICLI6 with PID 18812 (started by felip in C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api)
+2020-08-24 22:17:02.775  INFO 18812 --- [main] b.c.f.s.s.r.CategoryControllerTest       : The following profiles are active: test
+2020-08-24 22:17:05.678  INFO 18812 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:17:06.219  INFO 18812 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-24 22:17:06.220  INFO 18812 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-24 22:17:06.241  INFO 18812 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 21 ms
+2020-08-24 22:17:06.290  INFO 18812 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Started CategoryControllerTest in 4.401 seconds (JVM running for 6.693)
+2020-08-24 22:17:07.396  INFO 18812 --- [main] b.c.f.s.s.a.resource.CategoryController  :  updating a category. 
+2020-08-24 22:17:07.450  INFO 18812 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:17:57.285  INFO 18992 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Starting CategoryControllerTest on LAPTOP-DL9ICLI6 with PID 18992 (started by felip in C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api)
+2020-08-24 22:17:57.287  INFO 18992 --- [main] b.c.f.s.s.r.CategoryControllerTest       : The following profiles are active: test
+2020-08-24 22:17:59.981  INFO 18992 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:18:00.425  INFO 18992 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-24 22:18:00.426  INFO 18992 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-24 22:18:00.447  INFO 18992 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 21 ms
+2020-08-24 22:18:00.509  INFO 18992 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Started CategoryControllerTest in 4.05 seconds (JVM running for 6.178)
+2020-08-24 22:18:00.863  INFO 18992 --- [main] b.c.f.s.s.a.resource.CategoryController  :  updating a category. 
+2020-08-24 22:18:00.925  INFO 18992 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:22:22.174  INFO 6408 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Starting CategoryControllerTest on LAPTOP-DL9ICLI6 with PID 6408 (started by felip in C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api)
+2020-08-24 22:22:22.176  INFO 6408 --- [main] b.c.f.s.s.r.CategoryControllerTest       : The following profiles are active: test
+2020-08-24 22:22:24.832  INFO 6408 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 22:22:25.304  INFO 6408 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-24 22:22:25.304  INFO 6408 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-24 22:22:25.324  INFO 6408 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 20 ms
+2020-08-24 22:22:25.381  INFO 6408 --- [main] b.c.f.s.s.r.CategoryControllerTest       : Started CategoryControllerTest in 4.065 seconds (JVM running for 6.137)
+2020-08-24 22:22:26.040  INFO 6408 --- [main] b.c.f.s.s.a.resource.CategoryController  :  updating a category. 
+2020-08-24 22:22:26.693  INFO 6408 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

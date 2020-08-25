@@ -88,18 +88,6 @@ public class CategoryServiceTest {
     }
 
     @Test
-    @DisplayName("Deve retornar verdadeiro quando existir uma categoria na base com o nome informado.")
-    public void returnTrueWhenNameExistsTest(){
-
-    }
-
-    @Test
-    @DisplayName("Deve retornar falso quando não existir uma categoria na base com o nome informado.")
-    public void returnFalseWhenNameExistsTest(){
-
-    }
-
-    @Test
     @DisplayName("Deve filtrar todas as categorias com sucesso.")
     public void mustFindAllCategoriesTest(){
 
