@@ -42,7 +42,8 @@ public class CategoryController {
     @PutMapping("{id}")
     @ApiOperation("UPDATES A CATEGORY")
     @ApiResponses({
-            @ApiResponse( code = 200, message = "Category successfully updated" )
+            @ApiResponse( code = 200, message = "Category successfully updated" ),
+            @ApiResponse( code = 404, message = "Category not found" )
     })
     public CategoryDTO update( @PathVariable Long id, @RequestBody @Valid CategoryDTO categoryDTO ){
         log.info( " updating a category. " );
@@ -54,6 +55,20 @@ public class CategoryController {
                     category = categoryService.update( category );
                     return modelMapper.map( category, CategoryDTO.class );
                 })
+                .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
+    }
+
+    @GetMapping("{id}")
+    @ApiOperation("OBTAINS A CATEGORY DETAILS BY ID")
+    @ApiResponses({
+            @ApiResponse( code = 200, message = "Category returned successfully" ),
+            @ApiResponse( code = 404, message = "Category not found" )
+    })
+    public CategoryDTO getById( @PathVariable Long id ){
+        log.info( " obtaining details for category id: {} ", id );
+        return categoryService
+                .getById( id )
+                .map( category -> modelMapper.map( category, CategoryDTO.class ) )
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
     }
 }

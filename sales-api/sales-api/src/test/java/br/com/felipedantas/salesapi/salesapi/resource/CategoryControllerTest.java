@@ -112,7 +112,16 @@ public class CategoryControllerTest {
     @Test
     @DisplayName("Deve retornar resource not found ao tentar atualizar uma categoria inexistente.")
     public void updateInexistentCategoryTest() throws Exception {
-
+        CategoryDTO categoryDTO = CategoryDTO.builder().name("Celular e Telefone").description("Smartphone").build() ;
+        String json = new ObjectMapper().writeValueAsString( categoryDTO );
+        BDDMockito.given( categoryService.getById( Mockito.anyLong() ) ).willReturn( Optional.empty() );
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .put( CategoryAPI.concat( "/" + 1 ) )
+                .accept( MediaType.APPLICATION_JSON )
+                .contentType( MediaType.APPLICATION_JSON )
+                .content( json );
+        mockMvc.perform( request )
+                .andExpect( MockMvcResultMatchers.status().isNotFound() );
     }
 
     @Test
@@ -130,13 +139,29 @@ public class CategoryControllerTest {
     @Test
     @DisplayName("Deve filtrar uma categoria por id com sucesso.")
     public void mustFindByIdCategoryTest() throws Exception {
-
+        CategoryDTO categoryDTO = CategoryDTO.builder().name("Celular e Telefone").description("Smartphone").build() ;
+        Category category = Category.builder()
+                .id( 1l ).name( categoryDTO.getName() ).description( categoryDTO.getDescription() ).build() ;
+        BDDMockito.given( categoryService.getById( 1l ) ).willReturn( Optional.of( category ) );
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .get( CategoryAPI.concat( "/" + 1 ) )
+                .accept( MediaType.APPLICATION_JSON );
+        mockMvc.perform( request )
+                .andExpect( MockMvcResultMatchers.status().isOk() )
+                .andExpect( jsonPath("id").value( 1l ) )
+                .andExpect( jsonPath("name").value( categoryDTO.getName() ) )
+                .andExpect( jsonPath("description").value( categoryDTO.getDescription() ) );
     }
 
     @Test
     @DisplayName("Deve retornar resource not found quando a categoria filtrada por id não existir.")
     public void notFoundCategoryTest() throws Exception {
-
+        BDDMockito.given( categoryService.getById( Mockito.anyLong() ) ).willReturn( Optional.empty() );
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .get( CategoryAPI.concat( "/" + 1 ) )
+                .accept( MediaType.APPLICATION_JSON );
+        mockMvc.perform( request )
+                .andExpect( MockMvcResultMatchers.status().isNotFound() );
     }
 
     @Test
