@@ -27,6 +27,8 @@ API de Controle de Vendas em Java
 
 :hammer_and_wrench: Swagger
 
+:hammer_and_wrench: Travis CI
+
 :hammer_and_wrench: Jacoco
 
 :hammer_and_wrench: Codecov
