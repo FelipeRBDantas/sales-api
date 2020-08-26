@@ -93,3 +93,5 @@ API de Controle de Vendas em Java
 ## Run Tests Jacoco
 
 ```mvnw test```
+
+[![codecov](https://codecov.io/gh/FelipeRBDantas/sales-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FelipeRBDantas/sales-api)
