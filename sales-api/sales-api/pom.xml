@@ -8,8 +8,8 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.felipedantas.sales-api</groupId>
-	<artifactId>sales-api</artifactId>
+	<groupId>br.com.felipedantas.salesapi</groupId>
+	<artifactId>salesapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Sales API</name>
 	<description>API para Controle de Vendas</description>
