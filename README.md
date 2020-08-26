@@ -40,8 +40,8 @@ API de Controle de Vendas em Java
 - [X] Save
 - [X] Update
 - [ ] Delete
-- [ ] Find
-- [ ] FindById
+- [ ] FindAll
+- [X] FindById
 - [X] ExistsByName
 
 ### Provider
@@ -49,7 +49,7 @@ API de Controle de Vendas em Java
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] Find
+- [ ] FindAll
 - [ ] FindById
 
 ### Payment
@@ -57,7 +57,7 @@ API de Controle de Vendas em Java
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] Find
+- [ ] FindAll
 - [ ] FindById
 
 ### Salesman
@@ -65,7 +65,7 @@ API de Controle de Vendas em Java
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] Find
+- [ ] FindAll
 - [ ] FindById
 
 ### Client
@@ -73,7 +73,7 @@ API de Controle de Vendas em Java
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] Find
+- [ ] FindAll
 - [ ] FindById
 
 ### Provider
@@ -89,5 +89,5 @@ API de Controle de Vendas em Java
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] Find
+- [ ] FindAll
 - [ ] FindById
