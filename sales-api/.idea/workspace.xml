@@ -1,25 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="26963102-44b6-45a5-b6c3-c54da8e69f9b" name="Default Changelist" comment="" />
+    <list default="true" id="30fc07be-2e39-4da6-871f-80cf285fb355" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/SalesApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/api/ApplicationControllerAdvice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/api/dto/CategoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/api/exception/ApiErrors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/api/resource/CategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/exception/BusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/model/entity/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/model/repository/CategoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/felipedantas/salesapi/salesapi/service/impl/CategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/felipedantas/salesapi/salesapi/SalesApiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/felipedantas/salesapi/salesapi/repository/CategoryRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/felipedantas/salesapi/salesapi/resource/CategoryControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/felipedantas/salesapi/salesapi/service/CategoryServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/src/main/java/br/com/felipedantas/springbootadmin/springbootadmin/SpringBootAdminApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-admin/src/test/java/br/com/felipedantas/springbootadmin/springbootadmin/SpringBootAdminApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1gVfMei3MdeF7XRZnGkFMQ0hy55" />
+  <component name="ProjectId" id="1gercq9LUv96biea3ffIQyxUJwh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,172 +59,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\sales-api" />
-      <recent name="C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\src\test\java\br\com\felipedantas\salesapi\salesapi" />
-      <recent name="C:\Users\felip\OneDrive\Área de Trabalho\sales-api\sales-api\src\main\java\br\com\felipedantas\salesapi\salesapi" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.CategoryRepositoryTest.mustSaveCategoryTest">
-    <configuration name="SalesApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.felipedantas.salesapi.salesapi.SalesApiApplication" />
-      <module name="sales-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.felipedantas.salesapi.salesapi.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryControllerTest.mustFindByIdCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sales-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.felipedantas.salesapi.salesapi.resource.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.felipedantas.salesapi.salesapi.resource" />
-      <option name="MAIN_CLASS_NAME" value="br.com.felipedantas.salesapi.salesapi.resource.CategoryControllerTest" />
-      <option name="METHOD_NAME" value="mustFindByIdCategoryTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryControllerTest.mustSaveCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sales-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.felipedantas.salesapi.salesapi.resource.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.felipedantas.salesapi.salesapi.resource" />
-      <option name="MAIN_CLASS_NAME" value="br.com.felipedantas.salesapi.salesapi.resource.CategoryControllerTest" />
-      <option name="METHOD_NAME" value="mustSaveCategoryTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryControllerTest.notFoundCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sales-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.felipedantas.salesapi.salesapi.resource.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.felipedantas.salesapi.salesapi.resource" />
-      <option name="MAIN_CLASS_NAME" value="br.com.felipedantas.salesapi.salesapi.resource.CategoryControllerTest" />
-      <option name="METHOD_NAME" value="notFoundCategoryTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryRepositoryTest.mustSaveCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sales-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.felipedantas.salesapi.salesapi.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.felipedantas.salesapi.salesapi.repository" />
-      <option name="MAIN_CLASS_NAME" value="br.com.felipedantas.salesapi.salesapi.repository.CategoryRepositoryTest" />
-      <option name="METHOD_NAME" value="mustSaveCategoryTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.CategoryRepositoryTest.mustSaveCategoryTest" />
-        <item itemvalue="JUnit.CategoryControllerTest.mustSaveCategoryTest" />
-        <item itemvalue="Application.SalesApiApplication" />
-        <item itemvalue="JUnit.CategoryControllerTest.notFoundCategoryTest" />
-        <item itemvalue="JUnit.CategoryControllerTest.mustFindByIdCategoryTest" />
-      </list>
-    </recent_temporary>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sales-api/pom.xml" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="26963102-44b6-45a5-b6c3-c54da8e69f9b" name="Default Changelist" comment="" />
-      <created>1598204633985</created>
+      <changelist id="30fc07be-2e39-4da6-871f-80cf285fb355" name="Default Changelist" comment="" />
+      <created>1598485981223</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1598204633985</updated>
+      <updated>1598485981223</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598395149098">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598486032799">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1598395149098" />
-    <state x="397" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598315511258">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="397" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1598315511258" />
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1598317763432">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1598317763432" />
-    <state x="212" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1598204703863">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="212" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1598204703863" />
-    <state x="200" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598312284752">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="200" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1598312284752" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598204647620">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598204647620" />
-    <state width="1323" height="212" key="GridCell.Tab.0.bottom" timestamp="1598475788016">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="212" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598475788016" />
-    <state width="1323" height="212" key="GridCell.Tab.0.center" timestamp="1598475788016">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="212" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598475788016" />
-    <state width="1323" height="212" key="GridCell.Tab.0.left" timestamp="1598475788016">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="212" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598475788016" />
-    <state width="1323" height="212" key="GridCell.Tab.0.right" timestamp="1598475788016">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="212" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598475788016" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1598221029509">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598221029509" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598486032799" />
   </component>
 </project>
