@@ -29,8 +29,8 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category update( Category category ) {
-        if( category == null || category.getId() == null ){
-            throw new IllegalArgumentException("Category id cant be null.");
+        if( category.getId() == null ){
+            throw new IllegalArgumentException("O ID da Categoria não pode ser nulo.");
         }
         return this.categoryRepository.save( category );
     }
