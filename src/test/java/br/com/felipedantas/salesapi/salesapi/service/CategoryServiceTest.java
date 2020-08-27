@@ -13,6 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.Optional;
+
 @SpringBootTest
 @ActiveProfiles("test")
 public class CategoryServiceTest {
@@ -86,13 +88,21 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Deve filtrar uma categoria por id com sucesso.")
     public void mustFindByIdCategoryTest(){
-
+        Category category = Category.builder().id( 1l ).name("Informática").description("Informática").build();
+        Mockito.when( categoryRepository.findById( category.getId() ) ).thenReturn( Optional.of( category ) );
+        Optional<Category> foundCategory = categoryService.getById( category.getId() );
+        Assertions.assertThat( foundCategory.isPresent() ).isTrue();
+        Assertions.assertThat( foundCategory.get().getId() ).isEqualTo( category.getId() );
+        Assertions.assertThat( foundCategory.get().getName() ).isEqualTo( category.getName() );
+        Assertions.assertThat( foundCategory.get().getDescription() ).isEqualTo( category.getDescription() );
     }
 
     @Test
     @DisplayName("Deve retornar resource not found quando a categoria filtrada por id não existir.")
     public void notFoundCategoryTest(){
-
+        Mockito.when( categoryRepository.findById( Mockito.anyLong() ) ).thenReturn( Optional.empty() );
+        Optional<Category> foundCategory = categoryService.getById( 1l );
+        Assertions.assertThat( foundCategory.isPresent() ).isFalse();
     }
 
     @Test

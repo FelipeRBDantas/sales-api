@@ -10,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.Optional;
+
 @DataJpaTest
 @ActiveProfiles("test")
 public class CategoryRepositoryTest {
@@ -36,13 +38,17 @@ public class CategoryRepositoryTest {
     @Test
     @DisplayName("Deve filtrar uma categoria por id com sucesso.")
     public void mustFindByIdCategoryTest(){
-
+        Category category = Category.builder().name("Informática").description("Informática").build();
+        testEntityManager.persist( category );
+        Optional<Category> foundCategory = categoryRepository.findById( category.getId() );
+        Assertions.assertThat( foundCategory.isPresent() ).isTrue();
     }
 
     @Test
     @DisplayName("Deve retornar resource not found quando a categoria filtrada por id não existir.")
     public void notFoundCategoryTest(){
-
+        Optional<Category> foundCategory = categoryRepository.findById( 1l );
+        Assertions.assertThat( foundCategory.isPresent() ).isFalse();
     }
 
     @Test
