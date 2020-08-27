@@ -96,7 +96,7 @@ API de Controle de Vendas em Java
 
 https://github.com/FelipeRBDantas/spring-boot-admin
 
-## Run Tests Jacoco
+## Run Generate Reports Jacoco
 
 ```mvnw test```
 
