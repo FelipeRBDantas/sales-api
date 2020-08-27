@@ -92,6 +92,10 @@ API de Controle de Vendas em Java
 - [ ] FindAll
 - [ ] FindById
 
+## Run Spring Boot Admin
+
+https://github.com/FelipeRBDantas/spring-boot-admin
+
 ## Run Tests Jacoco
 
 ```mvnw test```
