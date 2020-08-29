@@ -8,4 +8,5 @@ public interface CategoryService {
     Category save( Category category );
     Optional<Category> getById( Long id );
     Category update( Category category );
+    void delete( Category category );
 }

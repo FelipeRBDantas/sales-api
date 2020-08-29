@@ -71,4 +71,19 @@ public class CategoryController {
                 .map( category -> modelMapper.map( category, CategoryDTO.class ) )
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
     }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus( HttpStatus.NO_CONTENT )
+    @ApiOperation("DELETES A CATEGORY BY ID")
+    @ApiResponses({
+            @ApiResponse( code = 204, message = "Category successfully deleted" ),
+            @ApiResponse( code = 404, message = "Category not found" )
+    })
+    public void delete( @PathVariable Long id ){
+        log.info( " deleting category of id: {} ", id );
+        Category category = categoryService
+                .getById( id )
+                .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
+        categoryService.delete( category );
+    }
 }

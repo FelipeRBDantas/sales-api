@@ -127,13 +127,24 @@ public class CategoryControllerTest {
     @Test
     @DisplayName("Deve remover uma categoria com sucesso.")
     public void mustDeleteCategoryTest() throws Exception {
-
+        Category category = Category.builder().id( 1l ).build();
+        BDDMockito.given( categoryService.getById( Mockito.anyLong() ) ).willReturn( Optional.of( category ) );
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .delete( CategoryAPI.concat( "/" + category.getId() ) )
+                .accept( MediaType.APPLICATION_JSON );
+        mockMvc.perform( request )
+                .andExpect( MockMvcResultMatchers.status().isNoContent() );
     }
 
     @Test
     @DisplayName("Deve retornar resource not found quando não encontrar uma categoria para deletar.")
     public void deleteInexistentCategoryTest() throws Exception {
-
+        BDDMockito.given( categoryService.getById( Mockito.anyLong() ) ).willReturn( Optional.empty() );
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .delete( CategoryAPI.concat("/" + 1l ) )
+                .accept( MediaType.APPLICATION_JSON );
+        mockMvc.perform( request )
+                .andExpect( MockMvcResultMatchers.status().isNotFound() );
     }
 
     @Test

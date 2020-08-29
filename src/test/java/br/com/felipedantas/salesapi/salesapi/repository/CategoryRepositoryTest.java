@@ -32,7 +32,12 @@ public class CategoryRepositoryTest {
     @Test
     @DisplayName("Deve remover uma categoria com sucesso.")
     public void mustDeleteCategoryTest(){
-
+        Category category = Category.builder().name("Informática").description("Informática").build();
+        testEntityManager.persist( category );
+        Category foundCategory = testEntityManager.find( Category.class, category.getId() );
+        categoryRepository.delete( foundCategory );
+        Category deletedCategory = testEntityManager.find( Category.class, category.getId() );
+        Assertions.assertThat( deletedCategory ).isNull();
     }
 
     @Test

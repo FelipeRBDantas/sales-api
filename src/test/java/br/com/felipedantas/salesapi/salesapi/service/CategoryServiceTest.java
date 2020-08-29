@@ -76,13 +76,17 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Deve remover uma categoria com sucesso.")
     public void mustDeleteCategoryTest(){
-
+        Category category = Category.builder().id( 1l ).build();
+        org.junit.jupiter.api.Assertions.assertDoesNotThrow( () -> categoryService.delete( category ) );
+        Mockito.verify( categoryRepository, Mockito.times( 1 ) ).delete( category );
     }
 
     @Test
     @DisplayName("Deve retornar resource not found quando não encontrar uma categoria para deletar.")
     public void deleteInexistentCategoryTest(){
-
+        Category category = Category.builder().build();
+        org.junit.jupiter.api.Assertions.assertThrows( IllegalArgumentException.class, () -> categoryService.delete( category ) );
+        Mockito.verify( categoryRepository, Mockito.never() ).delete( category );
     }
 
     @Test

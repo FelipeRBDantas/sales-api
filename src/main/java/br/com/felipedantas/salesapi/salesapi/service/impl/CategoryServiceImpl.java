@@ -34,4 +34,12 @@ public class CategoryServiceImpl implements CategoryService {
         }
         return this.categoryRepository.save( category );
     }
+
+    @Override
+    public void delete( Category category ) {
+        if( category.getId() == null ){
+            throw new IllegalArgumentException("O ID da Categoria não pode ser nulo.");
+        }
+        this.categoryRepository.delete( category );
+    }
 }

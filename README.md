@@ -39,10 +39,9 @@ API de Controle de Vendas em Java
 
 - [X] Save
 - [X] Update
-- [ ] Delete
+- [X] Delete
 - [ ] FindAll
 - [X] FindById
-- [X] ExistsByName
 
 ### Provider
 
