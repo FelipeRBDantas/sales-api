@@ -1,5 +1,5 @@
 # Sales API
-API de Controle de Vendas em Java
+Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação é banco em memória para testes.
 
 ## Tools
 
