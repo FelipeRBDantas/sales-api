@@ -1,5 +1,5 @@
 # Sales API
-Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação é banco em memória para testes.
+Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação, banco em memória para testes e banco relacional MySQL.
 
 ## Tools
 
@@ -32,6 +32,8 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 :hammer_and_wrench: Jacoco
 
 :hammer_and_wrench: Codecov
+
+:hammer_and_wrench: MySQL
 
 ## Features
 
