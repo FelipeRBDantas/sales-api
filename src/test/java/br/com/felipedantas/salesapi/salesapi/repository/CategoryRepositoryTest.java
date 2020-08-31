@@ -8,8 +8,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @DataJpaTest
@@ -76,6 +79,22 @@ public class CategoryRepositoryTest {
     @Test
     @DisplayName("Deve filtrar todas as categorias com sucesso.")
     public void mustFindAllCategoriesTest(){
-
+        Category category = Category.builder().name("Informática").description("Informática").build();
+        testEntityManager.persist( category );
+        List<Category> list = Arrays.asList( category );
+        PageRequest pageRequest = PageRequest.of( 0, 10 );
+        Example example = Example.of(
+                category,
+                ExampleMatcher
+                        .matching()
+                        .withIgnoreCase()
+                        .withIgnoreNullValues()
+                        .withStringMatcher( ExampleMatcher.StringMatcher.CONTAINING )
+        );
+        Page<Category> result = categoryRepository.findAll( example, pageRequest );
+        Assertions.assertThat( result.getTotalElements() ).isEqualTo( 1 );
+        Assertions.assertThat( result.getContent() ).isEqualTo( list );
+        Assertions.assertThat( result.getPageable().getPageNumber() ).isEqualTo( 0 );
+        Assertions.assertThat( result.getPageable().getPageSize() ).isEqualTo( 10 );
     }
 }

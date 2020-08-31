@@ -11,8 +11,14 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
@@ -110,8 +116,20 @@ public class CategoryServiceTest {
     }
 
     @Test
-    @DisplayName("Deve filtrar todas as categorias com sucesso.")
-    public void mustFindAllCategoriesTest(){
-
+    @DisplayName("Deve filtrar todas as categorias pelas propriedades com sucesso.")
+    public void mustFindAllCategoriesForPropertiesTest(){
+        Category category = Category.builder().name("Informática").description("Informática").build();
+        PageRequest pageRequest = PageRequest.of( 0, 10 );
+        List<Category> list = Arrays.asList( category );
+        Page<Category> page = new PageImpl<>( list, pageRequest, 1 );
+        Mockito.when( categoryRepository.findAll(
+                Mockito.any( Example.class ),
+                Mockito.any( PageRequest.class )
+        ) ).thenReturn( page );
+        Page<Category> result = categoryService.findAll( category, pageRequest );
+        Assertions.assertThat( result.getTotalElements() ).isEqualTo( 1 );
+        Assertions.assertThat( result.getContent() ).isEqualTo( list );
+        Assertions.assertThat( result.getPageable().getPageNumber() ).isEqualTo( 0 );
+        Assertions.assertThat( result.getPageable().getPageSize() ).isEqualTo( 10 );
     }
 }

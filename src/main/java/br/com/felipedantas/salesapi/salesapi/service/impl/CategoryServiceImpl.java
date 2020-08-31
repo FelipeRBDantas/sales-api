@@ -5,6 +5,10 @@ import br.com.felipedantas.salesapi.salesapi.model.entity.Category;
 import br.com.felipedantas.salesapi.salesapi.model.repository.CategoryRepository;
 import br.com.felipedantas.salesapi.salesapi.service.CategoryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -48,5 +52,19 @@ public class CategoryServiceImpl implements CategoryService {
             throw new IllegalArgumentException("O ID da Categoria não pode ser nulo.");
         }
         this.categoryRepository.delete( category );
+    }
+
+    @Transactional( readOnly = true, propagation = Propagation.SUPPORTS, isolation = Isolation.DEFAULT )
+    @Override
+    public Page<Category> findAll( Category category, Pageable pageable ) {
+        Example example = Example.of(
+                category,
+                ExampleMatcher
+                        .matching()
+                        .withIgnoreCase()
+                        .withIgnoreNullValues()
+                        .withStringMatcher( ExampleMatcher.StringMatcher.CONTAINING )
+        );
+        return this.categoryRepository.findAll( example, pageable );
     }
 }

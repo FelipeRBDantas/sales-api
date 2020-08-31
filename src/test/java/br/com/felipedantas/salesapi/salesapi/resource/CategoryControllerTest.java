@@ -14,6 +14,9 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
@@ -21,9 +24,8 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.util.Arrays;
 import java.util.Optional;
-
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @WebMvcTest( controllers = CategoryController.class )
 @ActiveProfiles("test")
@@ -50,9 +52,9 @@ public class CategoryControllerTest {
                 .content( json );
         mockMvc.perform( request )
             .andExpect( MockMvcResultMatchers.status().isCreated() )
-            .andExpect( jsonPath("id").value( 1l ) )
-            .andExpect( jsonPath("name").value( categoryDTO.getName() ) )
-            .andExpect( jsonPath("description").value( categoryDTO.getDescription() ) );
+            .andExpect( MockMvcResultMatchers.jsonPath("id").value( 1l ) )
+            .andExpect( MockMvcResultMatchers.jsonPath("name").value( categoryDTO.getName() ) )
+            .andExpect( MockMvcResultMatchers.jsonPath("description").value( categoryDTO.getDescription() ) );
     }
 
     @Test
@@ -104,9 +106,9 @@ public class CategoryControllerTest {
                 .content( json );
         mockMvc.perform( request )
                 .andExpect( MockMvcResultMatchers.status().isOk() )
-                .andExpect( jsonPath("id").value( 1l ) )
-                .andExpect( jsonPath("name").value( categoryDTO.getName() ) )
-                .andExpect( jsonPath("description").value( categoryDTO.getDescription() ) );
+                .andExpect( MockMvcResultMatchers.jsonPath("id").value( 1l ) )
+                .andExpect( MockMvcResultMatchers.jsonPath("name").value( categoryDTO.getName() ) )
+                .andExpect( MockMvcResultMatchers.jsonPath("description").value( categoryDTO.getDescription() ) );
     }
 
     @Test
@@ -152,16 +154,16 @@ public class CategoryControllerTest {
     public void mustFindByIdCategoryTest() throws Exception {
         CategoryDTO categoryDTO = CategoryDTO.builder().name("Celular e Telefone").description("Smartphone").build() ;
         Category category = Category.builder()
-                .id( 1l ).name( categoryDTO.getName() ).description( categoryDTO.getDescription() ).build() ;
+                .id( 1l ).name( categoryDTO.getName() ).description( categoryDTO.getDescription() ).build();
         BDDMockito.given( categoryService.getById( 1l ) ).willReturn( Optional.of( category ) );
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .get( CategoryAPI.concat( "/" + 1 ) )
                 .accept( MediaType.APPLICATION_JSON );
         mockMvc.perform( request )
                 .andExpect( MockMvcResultMatchers.status().isOk() )
-                .andExpect( jsonPath("id").value( 1l ) )
-                .andExpect( jsonPath("name").value( categoryDTO.getName() ) )
-                .andExpect( jsonPath("description").value( categoryDTO.getDescription() ) );
+                .andExpect( MockMvcResultMatchers.jsonPath("id").value( 1l ) )
+                .andExpect( MockMvcResultMatchers.jsonPath("name").value( categoryDTO.getName() ) )
+                .andExpect( MockMvcResultMatchers.jsonPath("description").value( categoryDTO.getDescription() ) );
     }
 
     @Test
@@ -176,8 +178,27 @@ public class CategoryControllerTest {
     }
 
     @Test
-    @DisplayName("Deve filtrar todas as categorias com sucesso.")
-    public void mustFindAllCategoriesTest() throws Exception {
-
+    @DisplayName("Deve filtrar todas as categorias pelas propriedades com sucesso.")
+    public void mustFindAllCategoriesForPropertiesTest() throws Exception {
+        CategoryDTO categoryDTO = CategoryDTO.builder().name("Informática").description("Informática").build();
+        Category category = Category.builder()
+                .id( 1l ).name( categoryDTO.getName() ).description( categoryDTO.getDescription() ).build();
+        BDDMockito.given( categoryService.findAll( Mockito.any( Category.class ), Mockito.any( Pageable.class ) ) )
+                .willReturn( new PageImpl<Category>(
+                        Arrays.asList( category ),
+                        PageRequest.of( 0, 10 ),
+                        1
+                ) );
+        String queryString = String.format("?name=%s&description=%s&page=0&size=10",
+                category.getName(), category.getDescription() );
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders
+                .get( CategoryAPI.concat( queryString ) )
+                .accept( MediaType.APPLICATION_JSON );
+        mockMvc.perform( request )
+                .andExpect( MockMvcResultMatchers.status().isOk() )
+                .andExpect( MockMvcResultMatchers.jsonPath("content", Matchers.hasSize( 1 ) ) )
+                .andExpect( MockMvcResultMatchers.jsonPath("totalElements").value( 1 ) )
+                .andExpect( MockMvcResultMatchers.jsonPath("pageable.pageSize").value( 10 ) )
+                .andExpect( MockMvcResultMatchers.jsonPath("pageable.pageNumber").value( 0 ) );
     }
 }

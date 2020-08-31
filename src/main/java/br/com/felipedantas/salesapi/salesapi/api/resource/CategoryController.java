@@ -10,11 +10,16 @@ import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/categories")
@@ -85,5 +90,22 @@ public class CategoryController {
                 .getById( id )
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
         categoryService.delete( category );
+    }
+
+    @GetMapping
+    @ApiOperation("FIND CATEGORIES BY PARAMS")
+    @ApiResponses({
+            @ApiResponse( code = 200, message = "Category returned successfully" ),
+            @ApiResponse( code = 404, message = "Category not found" )
+    })
+    public Page<CategoryDTO> findAll( CategoryDTO categoryDTO, Pageable pageable ){
+        log.info( " obtaining details for category: {} ", categoryDTO );
+        Category category = modelMapper.map( categoryDTO, Category.class );
+        Page<Category> result = categoryService.findAll( category, pageable );
+        List<CategoryDTO> list = result.getContent()
+                .stream()
+                .map( entity -> modelMapper.map( entity, CategoryDTO.class ) )
+                .collect( Collectors.toList() );
+        return new PageImpl<CategoryDTO>( list, pageable, result.getTotalElements() );
     }
 }
