@@ -179,11 +179,11 @@ public class CategoryControllerTest {
 
     @Test
     @DisplayName("Deve filtrar todas as categorias pelas propriedades com sucesso.")
-    public void mustFindAllCategoriesForPropertiesTest() throws Exception {
+    public void mustFindAllCategoriesByPropertiesTest() throws Exception {
         CategoryDTO categoryDTO = CategoryDTO.builder().name("Informática").description("Informática").build();
         Category category = Category.builder()
                 .id( 1l ).name( categoryDTO.getName() ).description( categoryDTO.getDescription() ).build();
-        BDDMockito.given( categoryService.findAll( Mockito.any( Category.class ), Mockito.any( Pageable.class ) ) )
+        BDDMockito.given( categoryService.findAllByProperties( Mockito.any( Category.class ), Mockito.any( Pageable.class ) ) )
                 .willReturn( new PageImpl<Category>(
                         Arrays.asList( category ),
                         PageRequest.of( 0, 10 ),

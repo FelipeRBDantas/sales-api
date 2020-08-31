@@ -56,7 +56,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Transactional( readOnly = true, propagation = Propagation.SUPPORTS, isolation = Isolation.DEFAULT )
     @Override
-    public Page<Category> findAll( Category category, Pageable pageable ) {
+    public Page<Category> findAllByProperties( Category category, Pageable pageable ) {
         Example example = Example.of(
                 category,
                 ExampleMatcher

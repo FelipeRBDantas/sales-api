@@ -98,10 +98,10 @@ public class CategoryController {
             @ApiResponse( code = 200, message = "Category returned successfully" ),
             @ApiResponse( code = 404, message = "Category not found" )
     })
-    public Page<CategoryDTO> findAll( CategoryDTO categoryDTO, Pageable pageable ){
+    public Page<CategoryDTO> findAllByProperties( CategoryDTO categoryDTO, Pageable pageable ){
         log.info( " obtaining details for category: {} ", categoryDTO );
         Category category = modelMapper.map( categoryDTO, Category.class );
-        Page<Category> result = categoryService.findAll( category, pageable );
+        Page<Category> result = categoryService.findAllByProperties( category, pageable );
         List<CategoryDTO> list = result.getContent()
                 .stream()
                 .map( entity -> modelMapper.map( entity, CategoryDTO.class ) )

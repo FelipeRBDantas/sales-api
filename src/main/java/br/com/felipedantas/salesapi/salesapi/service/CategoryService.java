@@ -11,5 +11,5 @@ public interface CategoryService {
     Optional<Category> getById( Long id );
     Category update( Category category );
     void delete( Category category );
-    Page<Category> findAll( Category category, Pageable pageable );
+    Page<Category> findAllByProperties( Category category, Pageable pageable );
 }

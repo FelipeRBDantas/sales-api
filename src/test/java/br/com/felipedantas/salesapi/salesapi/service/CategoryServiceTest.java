@@ -117,7 +117,7 @@ public class CategoryServiceTest {
 
     @Test
     @DisplayName("Deve filtrar todas as categorias pelas propriedades com sucesso.")
-    public void mustFindAllCategoriesForPropertiesTest(){
+    public void mustFindAllCategoriesByPropertiesTest(){
         Category category = Category.builder().name("Informática").description("Informática").build();
         PageRequest pageRequest = PageRequest.of( 0, 10 );
         List<Category> list = Arrays.asList( category );
@@ -126,7 +126,7 @@ public class CategoryServiceTest {
                 Mockito.any( Example.class ),
                 Mockito.any( PageRequest.class )
         ) ).thenReturn( page );
-        Page<Category> result = categoryService.findAll( category, pageRequest );
+        Page<Category> result = categoryService.findAllByProperties( category, pageRequest );
         Assertions.assertThat( result.getTotalElements() ).isEqualTo( 1 );
         Assertions.assertThat( result.getContent() ).isEqualTo( list );
         Assertions.assertThat( result.getPageable().getPageNumber() ).isEqualTo( 0 );
