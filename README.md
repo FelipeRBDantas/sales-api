@@ -42,7 +42,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [X] Save
 - [X] Update
 - [X] Delete
-- [X] FindAllForProperties
+- [X] FindAllByProperties
 - [X] FindById
 
 ### Provider
@@ -50,7 +50,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] FindAllForProperties
+- [ ] FindAllByProperties
 - [ ] FindById
 
 ### Payment
@@ -58,7 +58,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] FindAllForProperties
+- [ ] FindAllByProperties
 - [ ] FindById
 
 ### Salesman
@@ -66,7 +66,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] FindAllForProperties
+- [ ] FindAllByProperties
 - [ ] FindById
 
 ### Client
@@ -74,7 +74,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] FindAllForProperties
+- [ ] FindAllByProperties
 - [ ] FindById
 
 ### Provider
@@ -82,7 +82,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] FindAllForProperties
+- [ ] FindAllByProperties
 - [ ] FindById
 
 ### Sale
@@ -90,7 +90,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [ ] Save
 - [ ] Update
 - [ ] Delete
-- [ ] FindAllForProperties
+- [ ] FindAllByProperties
 - [ ] FindById
 
 ## Run Spring Boot Admin
