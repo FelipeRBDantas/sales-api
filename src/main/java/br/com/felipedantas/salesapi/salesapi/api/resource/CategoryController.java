@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -26,6 +29,7 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @PostMapping
+    @Transactional( propagation = Propagation.REQUIRED )
     @ResponseStatus( HttpStatus.CREATED )
     @ApiOperation("SAVE A CATEGORY")
     @ApiResponses({
@@ -40,6 +44,7 @@ public class CategoryController {
     }
 
     @PutMapping("{id}")
+    @Transactional( propagation = Propagation.REQUIRED )
     @ApiOperation("UPDATES A CATEGORY")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category successfully updated" ),
@@ -59,6 +64,7 @@ public class CategoryController {
     }
 
     @GetMapping("{id}")
+    @Transactional( readOnly = true, propagation = Propagation.SUPPORTS, isolation = Isolation.DEFAULT )
     @ApiOperation("OBTAINS A CATEGORY DETAILS BY ID")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category returned successfully" ),
@@ -73,6 +79,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("{id}")
+    @Transactional( propagation = Propagation.REQUIRED )
     @ResponseStatus( HttpStatus.NO_CONTENT )
     @ApiOperation("DELETES A CATEGORY BY ID")
     @ApiResponses({

@@ -50,9 +50,9 @@ public class CategoryControllerTest {
                 .content( json );
         mockMvc.perform( request )
             .andExpect( MockMvcResultMatchers.status().isCreated() )
-            .andExpect( MockMvcResultMatchers.jsonPath("id").value( 1l ) )
-            .andExpect( MockMvcResultMatchers.jsonPath("name").value( categoryDTO.getName() ) )
-            .andExpect( MockMvcResultMatchers.jsonPath("description").value( categoryDTO.getDescription() ) );
+            .andExpect( jsonPath("id").value( 1l ) )
+            .andExpect( jsonPath("name").value( categoryDTO.getName() ) )
+            .andExpect( jsonPath("description").value( categoryDTO.getDescription() ) );
     }
 
     @Test
