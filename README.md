@@ -44,6 +44,7 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 - [X] Delete
 - [X] FindAllByProperties
 - [X] FindById
+- [ ] FindByName
 
 ### Provider
 

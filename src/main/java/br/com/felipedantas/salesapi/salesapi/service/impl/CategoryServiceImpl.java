@@ -5,6 +5,7 @@ import br.com.felipedantas.salesapi.salesapi.model.entity.Category;
 import br.com.felipedantas.salesapi.salesapi.model.repository.CategoryRepository;
 import br.com.felipedantas.salesapi.salesapi.service.CategoryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
@@ -19,6 +20,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
+    @Autowired
     private final CategoryRepository categoryRepository;
 
     @Transactional( propagation = Propagation.REQUIRED )
