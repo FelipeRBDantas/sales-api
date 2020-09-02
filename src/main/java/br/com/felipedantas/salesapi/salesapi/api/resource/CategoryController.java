@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -30,7 +31,7 @@ public class CategoryController {
     private final ModelMapper modelMapper;
     private final CategoryService categoryService;
 
-    @PostMapping
+    @PostMapping( consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE } )
     @ResponseStatus( HttpStatus.CREATED )
     @ApiOperation("SAVE A CATEGORY")
     @ApiResponses({
@@ -44,7 +45,7 @@ public class CategoryController {
         return modelMapper.map( entity, CategoryDTO.class );
     }
 
-    @PutMapping("{id}")
+    @PutMapping( value = "{id}", consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE } )
     @ApiOperation("UPDATES A CATEGORY")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category successfully updated" ),
@@ -63,7 +64,7 @@ public class CategoryController {
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
     }
 
-    @GetMapping("{id}")
+    @GetMapping( value = "{id}", produces = { MediaType.APPLICATION_JSON_VALUE } )
     @ApiOperation("OBTAINS A CATEGORY DETAILS BY ID")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category returned successfully" ),
@@ -77,7 +78,7 @@ public class CategoryController {
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping( value = "{id}" )
     @ResponseStatus( HttpStatus.NO_CONTENT )
     @ApiOperation("DELETES A CATEGORY BY ID")
     @ApiResponses({
@@ -92,7 +93,7 @@ public class CategoryController {
         categoryService.delete( category );
     }
 
-    @GetMapping
+    @GetMapping( produces = { MediaType.APPLICATION_JSON_VALUE } )
     @ApiOperation("FIND CATEGORIES BY PARAMS")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category returned successfully" ),
