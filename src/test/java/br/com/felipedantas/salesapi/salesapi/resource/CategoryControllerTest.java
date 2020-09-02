@@ -168,7 +168,7 @@ public class CategoryControllerTest {
 
     @Test
     @DisplayName("Deve retornar resource not found quando a categoria filtrada por id não existir.")
-    public void notFoundCategoryTest() throws Exception {
+    public void notFoundCategoryByIdTest() throws Exception {
         BDDMockito.given( categoryService.getById( Mockito.anyLong() ) ).willReturn( Optional.empty() );
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .get( CategoryAPI.concat( "/" + 1 ) )
@@ -189,7 +189,7 @@ public class CategoryControllerTest {
                         PageRequest.of( 0, 10 ),
                         1
                 ) );
-        String queryString = String.format("?name=%s&description=%s&page=0&size=10",
+        String queryString = String.format( "?name=%s&description=%s&page=0&size=10",
                 category.getName(), category.getDescription() );
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .get( CategoryAPI.concat( queryString ) )

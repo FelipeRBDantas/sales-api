@@ -77,8 +77,8 @@ public class CategoryRepositoryTest {
     }
 
     @Test
-    @DisplayName("Deve filtrar todas as categorias com sucesso.")
-    public void mustFindAllCategoriesTest(){
+    @DisplayName("Deve filtrar todas as categorias pelas propriedades com sucesso.")
+    public void mustFindAllCategoriesByPropertiesTest(){
         Category category = Category.builder().name("Informática").description("Informática").build();
         testEntityManager.persist( category );
         List<Category> list = Arrays.asList( category );
