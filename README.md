@@ -107,7 +107,7 @@ https://github.com/FelipeRBDantas/spring-boot-admin
 
 ### Configurations
 
-Adicionar ou descomentar no arquivo pom.xml a configuração de plugin no build do Flyway logo abaixo:
+Adicionar ou descomentar no arquivo pom.xml a configuração do Flyway de plugin em build, como demonstrado logo abaixo:
 ```
 <plugin>
 	<groupId>org.flywaydb</groupId>
