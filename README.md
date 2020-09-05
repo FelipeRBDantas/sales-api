@@ -103,7 +103,36 @@ https://github.com/FelipeRBDantas/spring-boot-admin
 
 ```mvnw test```
 
-## Run Migrate Flyway
+## Flyway
+
+### Configurations
+
+Adicionar ou descomentar no arquivo pom.xml a configuração de plugin no build do Flyway logo abaixo:
+
+``` <plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/sales?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
+					<user>root</user>
+					<password></password>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql.version}</version>
+						<exclusions>
+							<exclusion>
+								<groupId>slf4j-api</groupId>
+								<artifactId>org.slf4j</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+				</dependencies>
+			</plugin> ```
+
+### Run Migrate Flyway
 
 ```mvn clean flyway:migrate```
 
