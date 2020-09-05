@@ -127,7 +127,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
 				<configuration>
@@ -148,7 +148,7 @@
 						</exclusions>
 					</dependency>
 				</dependencies>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
