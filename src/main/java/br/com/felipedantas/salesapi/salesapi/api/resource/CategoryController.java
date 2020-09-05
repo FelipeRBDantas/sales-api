@@ -31,7 +31,8 @@ public class CategoryController {
     private final ModelMapper modelMapper;
     private final CategoryService categoryService;
 
-    @PostMapping( consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE } )
+    @PostMapping( consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+                produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE } )
     @ResponseStatus( HttpStatus.CREATED )
     @ApiOperation("SAVE A CATEGORY")
     @ApiResponses({
@@ -45,7 +46,9 @@ public class CategoryController {
         return modelMapper.map( entity, CategoryDTO.class );
     }
 
-    @PutMapping( value = "{id}", consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE } )
+    @PutMapping( value = "{id}",
+                consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+                produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE } )
     @ApiOperation("UPDATES A CATEGORY")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category successfully updated" ),
@@ -64,7 +67,8 @@ public class CategoryController {
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
     }
 
-    @GetMapping( value = "{id}", produces = { MediaType.APPLICATION_JSON_VALUE } )
+    @GetMapping( value = "{id}",
+                produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE } )
     @ApiOperation("OBTAINS A CATEGORY DETAILS BY ID")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category returned successfully" ),
@@ -93,7 +97,7 @@ public class CategoryController {
         categoryService.delete( category );
     }
 
-    @GetMapping( produces = { MediaType.APPLICATION_JSON_VALUE } )
+    @GetMapping( produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE } )
     @ApiOperation("FIND CATEGORIES BY PARAMS")
     @ApiResponses({
             @ApiResponse( code = 200, message = "Category returned successfully" ),
