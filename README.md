@@ -109,7 +109,7 @@ https://github.com/FelipeRBDantas/spring-boot-admin
 
 ## Database Configurations
 
-Crie uma base de dados chamado "sales" e adiciona no arquivo "application.properties" as configurações abaixo:
+Crie uma base de dados chamada "sales" e adicione no arquivo "application.properties" as configurações abaixo:
 
 ```
 #Database
