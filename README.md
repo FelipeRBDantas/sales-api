@@ -108,7 +108,8 @@ https://github.com/FelipeRBDantas/spring-boot-admin
 ### Configurations
 
 Adicionar ou descomentar no arquivo pom.xml a configuração de plugin no build do Flyway logo abaixo:
- <plugin>
+```
+<plugin>
 	<groupId>org.flywaydb</groupId>
 	<artifactId>flyway-maven-plugin</artifactId>
 	<configuration>
@@ -130,6 +131,7 @@ Adicionar ou descomentar no arquivo pom.xml a configuração de plugin no build 
 	 </dependency>
 	</dependencies>
  </plugin>
+```
 
 ### Run Migrate Flyway
 
