@@ -30,7 +30,7 @@ import java.util.Optional;
 @WebMvcTest( controllers = CategoryController.class )
 @ActiveProfiles("test")
 public class CategoryControllerTest {
-    static String CategoryAPI = new String("/api/v1/categories");
+    static String CategoryAPI = new String("/api/categories/v1");
 
     @Autowired
     MockMvc mockMvc;

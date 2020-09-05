@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/v1/categories")
+@RequestMapping("/api/categories/v1")
 @RequiredArgsConstructor
 @Api("Category API")
 @Slf4j
