@@ -107,5 +107,19 @@ https://github.com/FelipeRBDantas/spring-boot-admin
 
 ```mvn clean flyway:migrate```
 
+## Database Configurations
+
+```
+#Database
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/sales?useTimezone=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+```
+
 [![Build Status](https://travis-ci.com/FelipeRBDantas/sales-api.svg?branch=master)](https://travis-ci.com/FelipeRBDantas/sales-api)
 [![codecov](https://codecov.io/gh/FelipeRBDantas/sales-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FelipeRBDantas/sales-api)
