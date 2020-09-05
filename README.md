@@ -1,5 +1,5 @@
 # Sales API
-Esse projeto é uma API Restful de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação, versionamento de base de dados, banco de dados em memória para testes e banco de dados relacional MySQL.
+Esse projeto é uma API Restful de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação, Content Negotiation, versionamento de API, versionamento de base de dados, banco de dados em memória para testes e banco de dados relacional MySQL.
 
 ## Tools
 
