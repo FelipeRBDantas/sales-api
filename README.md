@@ -1,5 +1,5 @@
 # Sales API
-Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação, banco de dados em memória para testes e banco de dados relacional MySQL.
+Esse projeto é uma API Restful de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação, versionamento de base de dados, banco de dados em memória para testes e banco de dados relacional MySQL.
 
 ## Tools
 
@@ -34,6 +34,8 @@ Esse projeto é uma API Restfull de Controle de Vendas desenvolvido orientado a 
 :hammer_and_wrench: Codecov
 
 :hammer_and_wrench: MySQL
+
+:hammer_and_wrench: Flyway
 
 ## Features
 
@@ -100,6 +102,10 @@ https://github.com/FelipeRBDantas/spring-boot-admin
 ## Run Generate Reports Jacoco
 
 ```mvnw test```
+
+## Run Migrate Flyway
+
+```mvn clean flyway:migrate```
 
 [![Build Status](https://travis-ci.com/FelipeRBDantas/sales-api.svg?branch=master)](https://travis-ci.com/FelipeRBDantas/sales-api)
 [![codecov](https://codecov.io/gh/FelipeRBDantas/sales-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FelipeRBDantas/sales-api)

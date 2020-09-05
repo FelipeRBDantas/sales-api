@@ -11,8 +11,8 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table( name = "categories" )
-@Entity( name = "categories" )
+@Table( name = "category" )
+@Entity( name = "category" )
 public class Category {
     @Id
     @Column
