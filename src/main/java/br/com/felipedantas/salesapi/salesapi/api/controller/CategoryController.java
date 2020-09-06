@@ -1,4 +1,4 @@
-package br.com.felipedantas.salesapi.salesapi.api.resource;
+package br.com.felipedantas.salesapi.salesapi.api.controller;
 
 import br.com.felipedantas.salesapi.salesapi.api.dto.CategoryDTO;
 import br.com.felipedantas.salesapi.salesapi.model.entity.Category;
@@ -21,9 +21,6 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/api/categories/v1")
@@ -79,12 +76,10 @@ public class CategoryController {
     })
     public CategoryDTO getById( @PathVariable Long id ){
         log.info( " obtaining details for category id: {} ", id );
-        CategoryDTO categoryDTO = categoryService
+        return categoryService
                 .getById( id )
                 .map( category -> modelMapper.map( category, CategoryDTO.class ) )
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
-        categoryDTO.add( linkTo( methodOn( CategoryController.class ).getById( id ) ).withSelfRel() );
-        return categoryDTO;
     }
 
     @DeleteMapping( value = "{id}" )

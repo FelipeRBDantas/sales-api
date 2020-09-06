@@ -1,7 +1,7 @@
-package br.com.felipedantas.salesapi.salesapi.resource;
+package br.com.felipedantas.salesapi.salesapi.controller;
 
 import br.com.felipedantas.salesapi.salesapi.api.dto.CategoryDTO;
-import br.com.felipedantas.salesapi.salesapi.api.resource.CategoryController;
+import br.com.felipedantas.salesapi.salesapi.api.controller.CategoryController;
 import br.com.felipedantas.salesapi.salesapi.exception.BusinessException;
 import br.com.felipedantas.salesapi.salesapi.model.entity.Category;
 import br.com.felipedantas.salesapi.salesapi.service.CategoryService;
