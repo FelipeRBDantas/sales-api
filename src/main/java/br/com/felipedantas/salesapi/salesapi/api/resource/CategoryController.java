@@ -22,6 +22,9 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 @RestController
 @RequestMapping("/api/categories/v1")
 @RequiredArgsConstructor
@@ -76,10 +79,12 @@ public class CategoryController {
     })
     public CategoryDTO getById( @PathVariable Long id ){
         log.info( " obtaining details for category id: {} ", id );
-        return categoryService
+        CategoryDTO categoryDTO = categoryService
                 .getById( id )
                 .map( category -> modelMapper.map( category, CategoryDTO.class ) )
                 .orElseThrow( () -> new ResponseStatusException( HttpStatus.NOT_FOUND ) );
+        categoryDTO.add( linkTo( methodOn( CategoryController.class ).getById( id ) ).withSelfRel() );
+        return categoryDTO;
     }
 
     @DeleteMapping( value = "{id}" )

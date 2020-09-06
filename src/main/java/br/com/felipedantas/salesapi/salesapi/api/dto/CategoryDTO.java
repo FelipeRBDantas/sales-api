@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -14,7 +15,8 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonPropertyOrder({ "id", "name", "description" })
-public class CategoryDTO {
+public class CategoryDTO extends RepresentationModel<CategoryDTO> {
+    @JsonProperty("id")
     private Long id;
     @NotEmpty
     @JsonProperty("name")
