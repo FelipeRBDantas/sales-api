@@ -18,7 +18,7 @@ public class SwaggerConfig {
     public Docket docket(){
         return new Docket( DocumentationType.SWAGGER_2 )
                     .select()
-                    .apis( RequestHandlerSelectors.basePackage("br.com.felipedantas.salesapi.salesapi.api.resource") )
+                    .apis( RequestHandlerSelectors.basePackage("br.com.felipedantas.salesapi.salesapi.api.controller") )
                     .paths( PathSelectors.any() )
                     .build()
                     .apiInfo( apiInfo() );

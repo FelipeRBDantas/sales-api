@@ -129,6 +129,9 @@ spring.jpa.show-sql=false
 
 Com o Content Negotiation, a aplicação se encontra orientada a Server-driven e Agent-driven, possibilitando que o cliente negocie a representação ou conteúdo de sua solicitação para JSON ou XML. Para negociar um determinado conteúdo, adicione em "Headers" a chave "Accept" com o valor "application/json" ou "application/xml".
 
+### Endpoints
+
+http://localhost:8080/swagger-ui.html
 
 [![Build Status](https://travis-ci.com/FelipeRBDantas/sales-api.svg?branch=master)](https://travis-ci.com/FelipeRBDantas/sales-api)
 [![codecov](https://codecov.io/gh/FelipeRBDantas/sales-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FelipeRBDantas/sales-api)
