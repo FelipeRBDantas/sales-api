@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/categories/v1")
 @RequiredArgsConstructor
-@Api("Category API")
+@Api( value = "CategoryEndpoint", description = "REST API for Category", tags = { "CategoryEndpoint" } )
 @Slf4j
 public class CategoryController {
     private final ModelMapper modelMapper;
