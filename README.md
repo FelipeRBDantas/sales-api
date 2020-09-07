@@ -21,6 +21,8 @@ Esse projeto é uma API Restful de Controle de Vendas desenvolvido orientado a t
 
 :hammer_and_wrench: Spring Security
 
+:hammer_and_wrench: JWT
+
 :hammer_and_wrench: H2 Database
 
 :hammer_and_wrench: Spring Boot Admin
