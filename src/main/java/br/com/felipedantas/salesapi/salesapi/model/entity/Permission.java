@@ -4,24 +4,28 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table( name = "categories" )
-@Entity( name = "categories" )
-public class Category {
+@Entity( name = "permission" )
+@Table( name = "permission" )
+public class Permission implements GrantedAuthority {
     @Id
-    @Column( name = "id" )
     @GeneratedValue( strategy = GenerationType.IDENTITY )
+    @Column( name = "id" )
     private Long id;
 
-    @Column( name = "name", length = 45 )
-    private String name;
-
-    @Column( name = "description", length = 100 )
+    @Column( name = "description" )
     private String description;
+
+    @Override
+    public String getAuthority() {
+        return this.description;
+    }
 }

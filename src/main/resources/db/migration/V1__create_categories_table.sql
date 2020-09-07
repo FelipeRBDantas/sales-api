@@ -3,4 +3,4 @@ CREATE TABLE IF NOT EXISTS `categories` (
     `name` varchar(45) NOT NULL,
     `description` varchar(100) NOT NULL,
     PRIMARY KEY (`id`)
-);
+) ENGINE=InnoDB;

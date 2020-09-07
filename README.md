@@ -1,5 +1,5 @@
 # Sales API
-Esse projeto é uma API Restful de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação, Content Negotiation, prática de versionamento de API, versionamento de base de dados, banco de dados em memória para testes, banco de dados relacional MySQL e configuração de CORS.
+Esse projeto é uma API Restful de Controle de Vendas desenvolvido orientado a testes, com integração continua, cobertura de código, monitoramento, documentação, Content Negotiation, prática de versionamento de API, versionamento de base de dados, banco de dados em memória para testes, banco de dados relacional MySQL, configuração de CORS e segurança.
 
 ## Tools
 
@@ -18,6 +18,8 @@ Esse projeto é uma API Restful de Controle de Vendas desenvolvido orientado a t
 :hammer_and_wrench: Spring Boot
 
 :hammer_and_wrench: Spring Data (JPA/Hibernate)
+
+:hammer_and_wrench: Spring Security
 
 :hammer_and_wrench: H2 Database
 
