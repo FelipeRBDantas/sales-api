@@ -59,10 +59,10 @@ public class JwtTokenProvider {
 
     public String resolveToken( HttpServletRequest httpServletRequest ){
         String bearerToken = httpServletRequest.getHeader( "Authorization" );
-        if( bearerToken != null && bearerToken.startsWith("Bearer ") ){
+        if( bearerToken != null && bearerToken.startsWith( "Bearer " ) ){
             return bearerToken.substring( 7, bearerToken.length() );
         }
-        return "";
+        return null;
     }
 
     public boolean validateToken( String token ){
