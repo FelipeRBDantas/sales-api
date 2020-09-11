@@ -1,7 +1,6 @@
 package br.com.felipedantas.salesapi.salesapi.api.exception;
 
 import br.com.felipedantas.salesapi.salesapi.exception.BusinessException;
-import br.com.felipedantas.salesapi.salesapi.exception.InvalidJwtAuthenticationException;
 import lombok.Getter;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.server.ResponseStatusException;
@@ -25,9 +24,5 @@ public class ApiErrors {
 
     public ApiErrors( ResponseStatusException responseStatusException ) {
         this.errors = Arrays.asList( responseStatusException.getReason() );
-    }
-
-    public ApiErrors( InvalidJwtAuthenticationException invalidJwtAuthentication ) {
-        this.errors = Arrays.asList( invalidJwtAuthentication.getMessage() );
     }
 }
