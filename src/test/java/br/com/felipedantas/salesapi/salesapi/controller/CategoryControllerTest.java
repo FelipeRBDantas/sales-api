@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.domain.PageImpl;
@@ -29,6 +30,7 @@ import java.util.Optional;
 
 @WebMvcTest( controllers = CategoryController.class )
 @ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
 public class CategoryControllerTest {
     static String CategoryAPI = new String("/api/categories/v1");
 

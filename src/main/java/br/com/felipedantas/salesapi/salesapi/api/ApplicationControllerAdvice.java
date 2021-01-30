@@ -2,6 +2,7 @@ package br.com.felipedantas.salesapi.salesapi.api;
 
 import br.com.felipedantas.salesapi.salesapi.api.exception.ApiErrors;
 import br.com.felipedantas.salesapi.salesapi.exception.BusinessException;
+import br.com.felipedantas.salesapi.salesapi.exception.InvalidJwtAuthenticationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -29,5 +30,10 @@ public class ApplicationControllerAdvice {
     @ExceptionHandler
     public ResponseEntity handleResponseStatusException( ResponseStatusException responseStatusException ){
         return new ResponseEntity( new ApiErrors( responseStatusException ), responseStatusException.getStatus() );
+    }
+
+    @ExceptionHandler
+    public ApiErrors handleInvalidJwtAuthenticationException( InvalidJwtAuthenticationException invalidJwtAuthenticationException ){
+        return new ApiErrors( invalidJwtAuthenticationException );
     }
 }
